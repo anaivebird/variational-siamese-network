@@ -32,7 +32,7 @@ In the data folder, you should put your data. We used quora_duplicate_questions.
 
 The model will be saved in _deepNLU/save/.  <br/>
 Our neural architecture is specified in nnet.py and utility functions in utils.py. <br/>
-Our data loader and preprocessing is specified in data.py
+Our data loader and preprocessing is specified in data.py.
 
 - To visualize generative and discriminative training on tensorboard, run:
 ```
