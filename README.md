@@ -21,11 +21,11 @@ The w2v folder holds pretrained models such as [GloVe](https://nlp.stanford.edu/
 
 In the data folder, you should put your data. We used quora_duplicate_questions.tsv. You should further put your train/dev/test files in the data/split folder (we saved those as .txt files). Your preprocessed data will be stored as .npy files in the folder named corpus.
 
-- To train a variational siamese network with generative pretraining (repeat), consider running the following in the folder _deepNLU
+- To train a variational siamese network with generative pretraining (repeat), consider running the following in the folder _deepNLU:
 ```
 > python train.py VAE
 ```
-- For the repeat, reformulate framework, consider running.
+- For the repeat, reformulate framework, consider running:
 ```
 > python train.py VAD
 ```
