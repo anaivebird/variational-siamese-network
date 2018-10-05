@@ -3,7 +3,9 @@
 ## Overview
 
 Tensorflow implementation of [Learning semantic similarity in a continuous space](https://nips.cc/Conferences/2018/Schedule?type=Poster)
-Deudon M.
+, Deudon M.
+
+<img align="center" img src="./img/Gauss.png">
 
 ## Requirements
 
@@ -28,8 +30,8 @@ In the data folder, you should put your data. We used quora_duplicate_questions.
 > python train.py VAD
 ```
 
-The model will be saved in _deepNLU/save/
-Our neural architecture is specified in nnet.py and utility functions in utils.py.
+The model will be saved in _deepNLU/save/.  <br/>
+Our neural architecture is specified in nnet.py and utility functions in utils.py. <br/>
 Our data loader and preprocessing is specified in data.py
 
 - To visualize generative and discriminative training on tensorboard, run:
@@ -39,23 +41,23 @@ Our data loader and preprocessing is specified in data.py
 
 - To test a trained model, you can run eval.ipynb with the Jupyter Notebook.
 
-## What is Combinatorial Optimization ?
-
-<img align="center" img src="./GitImg/Comic.png">
-
 ## Architecture and Training
 
 ### Variational Auto Encoder (VAE)
 
-TBA
+<img align="center" img src="./img/Repeat, Reformulate.png">
+
+<img align="center" img src="./img/tensorboard1.png">
 
 ### Variational Siamese Network
 
-TBA
+<img align="center" img src="./img/Variational_Siamese.png">
+
+<img align="center" img src="./img/tensorboard2.png">
 
 ## Evaluation
 
-TBA
+<img align="center" img src="./img/density.png">
 
 ## Acknowledgments
 
