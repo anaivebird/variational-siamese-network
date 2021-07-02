@@ -7,9 +7,7 @@ import pandas as pd
 import gensim as gensim
 import logging
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-dir_ = '..'
-#dir_ = '/ldaphome/mdeudon/NIPS' #os.getcwd()+'/deep_NLU' #####
-
+dir_ = '.'
 
 """ Preprocess text """
 def clean_sent(sentence):
@@ -30,7 +28,7 @@ def load_w2v(w2v_size=300):
 
     if not os.path.exists(saving_path): # init language model
         print("\n Creating word_embeddings...")
-        df = pd.read_csv(dir_+"/data/quora_duplicate_questions.tsv",delimiter='\t') # load data
+        df = pd.read_csv("data/quora_duplicate_questions.tsv",delimiter='\t') # load data
         df1 = df[['question1']].rename(index=str, columns={"question1": "question"}) # questions 1
         df2 = df[['question2']].rename(index=str, columns={"question2": "question"}) # questions 2
         unique_questions = pd.concat([df1,df2]).question.unique() # unique questions
@@ -41,7 +39,7 @@ def load_w2v(w2v_size=300):
         corpus.append(['UNK','UNK', 'UNK', 'UNK', 'UNK']) # unknown word
         corpus.append(['EOS','EOS', 'EOS', 'EOS', 'EOS']) # padding
 
-        my_model = gensim.models.word2vec.Word2Vec(size=w2v_size, min_count=2, sg=1) # initialize W2V model: collect 87 116 word types from a corpus of 7 161 626 (+10) raw words 
+        my_model = gensim.models.Word2Vec(vector_size=w2v_size, min_count=2, sg=1) # initialize W2V model: collect 87 116 word types from a corpus of 7 161 626 (+10) raw words 
         my_model.build_vocab(corpus) # 48 096 (+2) not unique words (min_count=2). --> 55% of word types / 99% of raw words
         my_model.intersect_word2vec_format(dir_+'/w2v/' + 'glove.6B.'+str(w2v_size)+'d.txt',binary=False) # update with GloVe: 44 373 retrieved (84%)
 
